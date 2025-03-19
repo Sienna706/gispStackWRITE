@@ -145,7 +145,7 @@
           definitionExpression: "Fac_Type = 'AIRPORT'", //adding sql to filter for airports
 
           labelingInfo: [airportLabels], //adding the labels 
-          outFields: ["Fac_Name", "AirportCode"] // Ensure these fields are included
+          outFields: ["Fac_Name"] // Ensure these fields are included
         });
 
         //adding the feature layer to the map
@@ -153,45 +153,17 @@
 
         //adding the const for the feature layer
         const myAirports = new FeatureLayer({
-        url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/My_Airport(s)/FeatureServer",
+          url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/My_Airport(s)/FeatureServer",
  
-        //adding the popup here
-        outFields: ["AirportCode"],
+          //adding the popup here
+           outFields: ["AirportCode"],
 
-        // Adding the renderer for the icon
-        renderer: {
-          type: "simple",
-          symbol: {
-            type: "simple-marker",
-            style: "triangle",
-            color: "pink",
-            size: "15px",
-            outline: {
-              color: "purple",
-              width: 1
-            }
-          }
-        }
-      }); // Close the FeatureLayer definition
+        });
 
-      //adding the feature layer to the map
-      map.add(myAirports);
+          //adding the feature layer to the map
+          map.add(myAirports);
 
-      // Set the point layer's LayerInfo
-      const pointInfos = {
-         layer: myAirports
-      }
-
-      // Begin Editor constructor
-      const editor = new Editor({
-        view: view,
-        layerInfos: [pointInfos]
-      }); // End Editor constructor
-
-      // Add the widget to the view
-      view.ui.add(editor, "top-right");
-
-    }); // Close the require function
+      });
 
   </script>
 
