@@ -131,7 +131,7 @@
 
         labelPlacement: "above-center",
         labelExpressionInfo: {
-          expression: "$feature.Fac_Name + ' (' + $feature.AirportCode + ')'"
+          expression: "$feature.Fac_Name"
         }
       };
 
@@ -142,14 +142,13 @@
           definitionExpression: "Fac_Type = 'AIRPORT'", //adding sql to filter for airports
 
           labelingInfo: [airportLabels], //adding the labels 
-
-
+        
         });
 
         //adding the feature layer to the map
         map.add(airportLayer);
 
-      });
+    }); // Close the require function
 
   </script>
 
