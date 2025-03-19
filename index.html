@@ -160,6 +160,21 @@
         //adding the popup here
         outFields: ["AirportCode"],
 
+        // Adding the renderer for the icon
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "simple-marker",
+            style: "circle",
+            color: "blue",
+            size: "24px",
+            outline: {
+              color: "white",
+              width: 1
+            }
+          }
+        }
+
 });
 
 //adding the feature layer to the map
